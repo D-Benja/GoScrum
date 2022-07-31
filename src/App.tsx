@@ -34,7 +34,7 @@ const App = () => {
 						path="/login"
 						element={
 							<motion.div
-								className="page"
+								className="h-full"
 								initial="out"
 								animate="in"
 								exit="out"
@@ -48,7 +48,7 @@ const App = () => {
 						path="/register"
 						element={
 							<motion.div
-								className="page"
+								className="h-full"
 								initial="out"
 								animate="in"
 								exit="out"
@@ -86,7 +86,7 @@ const App = () => {
 										className="page"
 										initial="out"
 										animate="in"
-										exit="out"
+										exit="exit"
 										variants={pageTransition}
 									>
 										<Main />
@@ -97,10 +97,10 @@ const App = () => {
 								path="/tasks"
 								element={
 									<motion.div
-										className="page"
+										className="h-full"
 										initial="out"
 										animate="in"
-										exit="out"
+										exit="exit"
 										variants={pageTransition}
 									>
 										<Tasks />
@@ -111,10 +111,10 @@ const App = () => {
 								path="/schedule"
 								element={
 									<motion.div
-										className="page"
+										className="h-full"
 										initial="out"
 										animate="in"
-										exit="out"
+										exit="exit"
 										variants={pageTransition}
 									>
 										<Schedule />
@@ -128,7 +128,7 @@ const App = () => {
 										className="page"
 										initial="out"
 										animate="in"
-										exit="out"
+										exit="exit"
 										variants={pageTransition}
 									>
 										<Projects />
@@ -139,10 +139,10 @@ const App = () => {
 								path="/projects/create"
 								element={
 									<motion.div
-										className="page"
+										className="h-full"
 										initial="out"
 										animate="in"
-										exit="out"
+										exit="exit"
 										variants={pageTransition}
 									>
 										<CreateNewProject />
@@ -156,10 +156,10 @@ const App = () => {
 							element={
 								<Suspense fallback={<div>Loading...</div>}>
 									<motion.div
-										className="page"
+										className="h-full"
 										initial="out"
 										animate="in"
-										exit="out"
+										exit="exit"
 										variants={pageTransition}
 									>
 										<Error404 />
