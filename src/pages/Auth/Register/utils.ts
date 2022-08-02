@@ -1,48 +1,58 @@
-import { SelectOptions } from '../models'
 import * as Yup from 'yup'
+import { handleURL } from '../../../utils/handleURL'
+import { v4 as uuidv4 } from 'uuid'
+import { User } from '../models'
+import { FormikHelpers } from 'formik'
+import { NavigateFunction } from 'react-router-dom'
 
 const validateValues = {
-	username: Yup.string().required('Username is required'),
+	userName: Yup.string().required('Username is required'),
 	email: Yup.string().email('Invalid Email').required('Email is required'),
 	password: Yup.string().required('Password is required'),
 	role: Yup.string().required('Role is required'),
 	continent: Yup.string().required('Continent is required'),
 	region: Yup.string().required('Region is required'),
+	teamId: Yup.string().required('TeamId is required'),
 }
 
 export const validationSchema = Yup.object(validateValues)
 
-export const handleOptions = (selectType: string): Array<SelectOptions> => {
-	if (selectType === 'role') {
-		const options = [
-			{ value: 'Team Member', label: 'Team Member' },
-			{ value: 'Team Leader', label: 'Team Leader' },
-		]
+export const handleSubmit = (
+	_values: User,
+	navigate: NavigateFunction
+): ((
+	values: User,
+	formikHelpers: FormikHelpers<User>
+) => void | Promise<any>) => {
+	return async (values, formikHelpers) => {
+		const { userName, email, password, role, continent, region, teamId } =
+			values
+		const teamID = !teamId ? uuidv4() : teamId
+		const url = handleURL('/auth/register')
 
-		return options
+		const response = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				user: {
+					userName,
+					email,
+					password,
+					role,
+					continent,
+					region,
+					teamID,
+				},
+			}),
+		})
+
+		if (response.status === 201) {
+			formikHelpers.resetForm()
+			formikHelpers.setSubmitting(false)
+
+			navigate('/', { replace: true })
+		}
 	}
-
-	if (selectType === 'continent') {
-		return [
-			{ value: 'Africa', label: 'Africa' },
-			{ value: 'Asia', label: 'Asia' },
-			{ value: 'Europe', label: 'Europe' },
-			{ value: 'North America', label: 'North America' },
-			{ value: 'Oceania', label: 'Oceania' },
-			{ value: 'South America', label: 'South America' },
-		]
-	}
-
-	if (selectType === 'region') {
-		return [
-			{ value: 'United States', label: 'United States' },
-			{ value: 'Latam', label: 'Latam' },
-			{ value: 'Brasil', label: 'Brasil' },
-			{ value: 'Australia', label: 'Australia' },
-			{ value: 'Japan', label: 'Japan' },
-			{ value: 'Others', label: 'Others' },
-		]
-	}
-
-	return []
 }

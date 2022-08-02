@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import RequireAuth from './setup/auth/RequireAuth'
-import { pageTransition } from './setup/pageTransition'
+import RequireAuth from './components/auth/RequireAuth'
+import { pageTransition } from './utils/pageTransition'
 
 import { index as Login } from './pages/Auth/Login/index'
 import { index as Register } from './pages/Auth/Register/index'
@@ -31,7 +31,7 @@ const App = () => {
 			{isDisconnected() ? (
 				<Routes>
 					<Route
-						path="/login"
+						path="/"
 						element={
 							<motion.div
 								className="h-full"

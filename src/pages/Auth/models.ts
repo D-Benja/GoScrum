@@ -1,29 +1,25 @@
 type Role = 'Team Member' | 'Team Leader' | ''
 
 type Continent = 'America' | 'Europa' | 'Otro' | ''
-
-type Region =
-	| 'United States'
-	| 'Latam'
-	| 'Brasil'
-	| 'Australia'
-	| 'Japan'
-	| 'Other'
-	| ''
-
 export interface User {
-	uuid: string
-	username: string
+	userName: string
 	email: string
 	password: string
 	role: Role
 	continent: Continent
-	region: Region
+	region: string
+	teamId: string
 }
 
-export interface Credentials extends Pick<User, 'email' | 'password'> {}
+export interface Credentials extends Pick<User, 'userName' | 'password'> {}
 
 export interface SelectOptions {
 	value: string
 	label: string
+}
+
+export interface OptionData {
+	Rol: []
+	Continente: []
+	Region: []
 }

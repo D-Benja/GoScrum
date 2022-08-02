@@ -1,47 +1,40 @@
 import { useState } from 'react'
 import { useFormik } from 'formik'
-import { User } from '../models'
+import { OptionData, User } from '../models'
+import { handleSubmit, validationSchema } from './utils'
+import { Link, useNavigate } from 'react-router-dom'
+import { handleURL } from '../../../utils/handleURL'
 import Input from '../Layout/Input'
 import Select from '../Layout/Select'
-import { validationSchema } from './utils'
-import { Link } from 'react-router-dom'
 import useFetch from '../../../hooks/useFetch'
-import { apiRequest } from '../../../setup/apiUrl'
-
-interface OptionData {
-	Rol: []
-	Continente: []
-	Region: []
-}
+import { logo } from '../../../assets'
 
 export const index = () => {
 	const [credentials] = useState<User>({
-		uuid: '',
-		username: '',
+		userName: '',
 		email: '',
 		password: '',
 		role: '',
 		continent: '',
 		region: '',
+		teamId: '',
 	})
+	const url = handleURL('/auth/data')
+	const navigate = useNavigate()
 
-	const url = apiRequest('/auth/data')
-
+	const [isSwitched, setIsSwitch] = useState(false)
 	const { data, isLoading } = useFetch(url)
 
 	const optionData: OptionData = data
+	const initialValues = credentials
 
 	const formik = useFormik({
-		initialValues: credentials,
+		initialValues,
 		validationSchema,
-		onSubmit: (values) => {
-			console.log(values)
-		},
+		onSubmit: handleSubmit(credentials, navigate),
 	})
 
 	const continentIsSelected = !formik.values.continent
-
-	console.log(!continentIsSelected)
 
 	return (
 		<>
@@ -51,9 +44,12 @@ export const index = () => {
 				</div>
 			) : (
 				<div className="container mx-auto flex h-[100vh] flex-col items-center justify-center ">
-					<div className="absolute left-10 top-10 flex text-lg font-bold">
-						<p className="text-orange-500">Go</p>
-						<p className=" opacity-70">Scrum</p>
+					<div className="absolute top-4 left-8 mt-2 flex items-center justify-center gap-4">
+						<img src={logo} alt="gs logo" className="h-16 w-10" />
+						<div className="flex items-center justify-center text-2xl">
+							<span className="text-deep_orange">Go</span>
+							<span>Scrum</span>
+						</div>
 					</div>
 					<form onSubmit={formik.handleSubmit}>
 						<h1 className="mb-10 text-3xl">Register</h1>
@@ -61,12 +57,12 @@ export const index = () => {
 							<Input
 								type="text"
 								label="Username"
-								inputId="username"
+								inputId="userName"
 								handler={formik.handleChange}
 							/>
-							{formik.errors.username && formik.touched.username && (
+							{formik.errors.userName && formik.touched.userName && (
 								<div className="text-sm text-red-600">
-									* {formik.errors.username}
+									* {formik.errors.userName}
 								</div>
 							)}
 						</div>
@@ -96,6 +92,38 @@ export const index = () => {
 								</div>
 							)}
 						</div>
+						<div className="mb-6">
+							<div className="relative flex flex-col justify-center overflow-hidden">
+								<div className="flex">
+									<label className="relative mr-5 inline-flex cursor-pointer items-center">
+										<input
+											type="checkbox"
+											className="peer sr-only"
+											checked={isSwitched}
+											readOnly
+											onChange={() => setIsSwitch(!isSwitched)}
+										/>
+										<div className="peer h-6 w-11 rounded-full bg-gray-200  after:absolute  after:top-0.5 after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-orange-600/70 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-orange-300"></div>
+										<span className="ml-2 text-gray-900"> I have Team ID</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						{isSwitched && (
+							<div className="mb-6">
+								<Input
+									type="text"
+									label="Team ID"
+									inputId="teamId"
+									handler={formik.handleChange}
+								/>
+								{formik.errors.teamId && formik.touched.teamId && (
+									<div className="text-sm text-red-600">
+										* {formik.errors.teamId}
+									</div>
+								)}
+							</div>
+						)}
 						<div className="mb-6">
 							<Select
 								label="Role"
@@ -150,7 +178,7 @@ export const index = () => {
 					<div className="mt-8 flex flex-col items-center">
 						<p className="text-center text-gray-500">
 							If you have a account, please{' '}
-							<Link to="/login" className="text-orange-500">
+							<Link to="/" className="text-orange-500">
 								Log in
 							</Link>
 						</p>
