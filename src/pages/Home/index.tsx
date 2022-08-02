@@ -1,6 +1,6 @@
 // import { useResize } from '../../hooks/useResize'
-import Header from './components/Layout/Header'
-import SideBar from './components/Layout/SideBar'
+import Header from '../../components/Layout/Header'
+import SideBar from '../../components/Layout/SideBar'
 
 export const index = ({ children }: any) => {
 	// const display = useResize()

@@ -3,7 +3,7 @@ import {
 	commentsIcon,
 	profilePicture,
 	searchIcon,
-} from '../../../../assets'
+} from '../../assets'
 
 const Header = () => {
 	return (

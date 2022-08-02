@@ -9,7 +9,7 @@ import {
 	messageIcon,
 	projectIcon,
 	taskIcon,
-} from '../../../../assets'
+} from '../../assets'
 
 const SideBar = () => {
 	const navigate = useNavigate()
@@ -17,7 +17,7 @@ const SideBar = () => {
 	const handleLogout = () => {
 		localStorage.removeItem('token')
 
-		navigate('/login', { replace: true })
+		navigate('/', { replace: true })
 	}
 
 	return (
