@@ -3,7 +3,7 @@ import { useState } from 'react'
 import * as Yup from 'yup'
 
 const TaskModal = () => {
-	const [values, setValues] = useState({
+	const [values] = useState({
 		title: '',
 		description: '',
 		priority: '',
