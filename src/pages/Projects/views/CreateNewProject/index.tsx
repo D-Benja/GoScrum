@@ -24,9 +24,6 @@ export const CreateNewProject = () => {
 		},
 	})
 
-	console.log(formik.values.assignees)
-	console.log(formik.errors.assignees)
-
 	return (
 		<div className="flex h-full flex-col gap-10 px-12 pt-8">
 			<h1 className="text-2xl font-bold">Create a new project</h1>
@@ -116,7 +113,7 @@ export const CreateNewProject = () => {
 						<label>Assignees</label>
 						<div className="flex flex-wrap">
 							{Developers.map((developer: any) => (
-								<div className="w-1/2 py-2 px-8" key={developer.id}>
+								<div className="w-1/2 py-2 px-8" key={developer.value}>
 									<label className="flex gap-4">
 										<input
 											type="checkbox"
