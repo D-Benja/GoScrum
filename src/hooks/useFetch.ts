@@ -7,7 +7,12 @@ interface fetchData {
 	error: boolean
 }
 
-const useFetch = (url: string): fetchData => {
+interface fetchProps {
+	url: string
+	authToken?: string | null
+}
+
+const useFetch = ({ url, authToken }: fetchProps): fetchData => {
 	const [fetchedData, setFetchedData] = useState({
 		data: [],
 		isLoading: true,
@@ -26,7 +31,11 @@ const useFetch = (url: string): fetchData => {
 			// 	signal: controller.signal,
 			// })
 
-			const response = await axios.get(url)
+			const response = await axios.get(url, {
+				headers: {
+					Authorization: `Bearer ${authToken}`,
+				},
+			})
 
 			const data = await response.data
 
