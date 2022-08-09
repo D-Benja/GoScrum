@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { plusIcon } from '../../assets'
+import useFetch from '../../hooks/useFetch'
 import TaskCard from './components/TaskCard'
-import { Tasks } from './data'
+import { Task } from './models'
 
 export const index = () => {
 	const navigate = useNavigate()
@@ -9,6 +10,14 @@ export const index = () => {
 	const handleNavigate = (path: string) => {
 		navigate(`/tasks/${path}`)
 	}
+
+	const url = 'https://goscrum-api.alkemy.org/task'
+	const authToken = localStorage.getItem('token')
+
+	const { data } = useFetch({
+		url,
+		authToken,
+	})
 
 	return (
 		<div className="flex flex-col gap-10 px-12 pt-8">
@@ -28,9 +37,11 @@ export const index = () => {
 							<img src={plusIcon} alt="" className="h-4 w-4" />
 						</button>
 					</div>
-					{Tasks.map((task) => (
-						<TaskCard key={task.taskId} {...task} />
-					))}
+					<div className="flex h-[670px] flex-col gap-6 overflow-y-scroll pr-2">
+						{data.map((task: Task) => (
+							<TaskCard key={task._id} {...task} />
+						))}
+					</div>
 				</div>
 				<div className="col-span-1 flex flex-col gap-6">
 					<div className="flex items-center justify-between">
@@ -39,9 +50,11 @@ export const index = () => {
 							<img src={plusIcon} alt="" className="h-4 w-4" />
 						</div>
 					</div>
-					{Tasks.map((task) => (
-						<TaskCard key={task.taskId} {...task} />
-					))}
+					<div className="flex h-[670px] flex-col gap-6 overflow-y-scroll pr-2">
+						{data.map((task: Task) => (
+							<TaskCard key={task._id} {...task} />
+						))}
+					</div>
 				</div>
 				<div className="col-span-1 flex flex-col gap-6">
 					<div className="flex items-center justify-between">
@@ -50,9 +63,11 @@ export const index = () => {
 							<img src={plusIcon} alt="" className="h-4 w-4" />
 						</div>
 					</div>
-					{Tasks.map((task) => (
-						<TaskCard key={task.taskId} {...task} />
-					))}
+					<div className="flex h-[670px] flex-col gap-6 overflow-y-scroll pr-2">
+						{data.map((task: Task) => (
+							<TaskCard key={task._id} {...task} />
+						))}
+					</div>
 				</div>
 				<div className="col-span-1 flex flex-col gap-6">
 					<div className="flex items-center justify-between">
@@ -61,9 +76,11 @@ export const index = () => {
 							<img src={plusIcon} alt="" className="h-4 w-4" />
 						</div>
 					</div>
-					{Tasks.map((task) => (
-						<TaskCard key={task.taskId} {...task} />
-					))}
+					<div className="flex h-[670px] flex-col gap-6 overflow-y-scroll pr-2">
+						{data.map((task: Task) => (
+							<TaskCard key={task._id} {...task} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

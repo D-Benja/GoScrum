@@ -1,27 +1,28 @@
 import { comment, linkIcon } from '../../../assets/index'
-import { TaskCardProps } from '../models'
+import { capitalizeString } from '../../../utils/capitalizeString'
+import { Task } from '../models'
 
-const TaskCard = ({
-	taskTitle,
-	taskDescription,
-	taskPriority,
-	taskAssignees,
-}: TaskCardProps) => {
+const TaskCard = ({ ...props }: Task) => {
+	const { title, description, createdAt, importance } = props
+
+	const importanceCapitalized = capitalizeString(importance)
+	const createdAtParsed = new Date(createdAt).toLocaleString()
+
 	return (
 		<div className="h-48 rounded-2xl border px-4 py-3">
-			<span className="rounded-2xl bg-red-500/90 px-4 py-1 text-sm text-white">
-				{taskPriority}
-			</span>
+			<div className="flex items-center justify-between">
+				<span className="rounded-2xl bg-red-500/90 px-4 py-1 text-sm text-white">
+					{importanceCapitalized}
+				</span>
+				<span className="text-sm">{createdAtParsed}</span>
+			</div>
 			<div className="mt-3 flex flex-col gap-2">
-				<h3>{taskTitle}</h3>
+				<h3>{title}</h3>
 				<p className="relative h-8 w-4/5 overflow-hidden text-xs after:absolute after:bottom-0 after:right-0 after:h-4 after:w-3/4 after:bg-gradient-to-r after:from-transparent after:to-white after:content-['']">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, facere
-					quasi nam placeat nostrum rem. Pariatur eius repellendus facilis
-					repudiandae, eaque ab iste recusandae fugiat temporibus dolores
-					cumque, odio accusamus?
+					{description}
 				</p>
 			</div>
-			<div className="mt-6 flex justify-between">
+			<div className="my-4 flex justify-between">
 				<div className="relative flex">
 					<div className="absolute top-0 left-0 h-10 w-10 rounded-full border bg-blue-100" />
 					<div className="absolute top-0 left-8 h-10 w-10 rounded-full border bg-blue-200" />

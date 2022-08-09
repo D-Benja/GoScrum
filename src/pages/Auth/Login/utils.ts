@@ -1,7 +1,8 @@
 import { FormikHelpers } from 'formik'
 import { NavigateFunction } from 'react-router-dom'
-import * as Yup from 'yup'
 import { handleURL } from '../../../utils/handleURL'
+import * as Yup from 'yup'
+import { sweetAlert } from '../../../utils/sweetAlert'
 
 const validateValues = {
 	userName: Yup.string().required('Username is required'),
@@ -39,6 +40,13 @@ export const handleSubmit = (
 					localStorage.setItem('token', data?.result?.token)
 
 					navigate('/', { replace: true })
+				} else {
+					sweetAlert({
+						title: 'Invalid Credentials',
+						text: 'Username or password is incorrect',
+						icon: 'error',
+					})
+					formikHelpers.setSubmitting(false)
 				}
 			})
 	}

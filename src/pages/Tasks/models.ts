@@ -1,12 +1,22 @@
-interface TaskCard {
-	taskTitle: string
-	taskDescription: string
-	taskStatus: string
-	taskPriority: string
-	taskDueDate: string
-	taskAssignees: string
-	taskId: string
+interface User {
+	email: string
+	role: string
+	userName: string
+	teamId: string
+	userId: string
+	iat: number
+	exp: number
 }
-
-export interface TaskCardProps
-	extends Omit<TaskCard, 'taskStatus' | 'taskId'> {}
+export interface Task {
+	_id: string
+	title: string
+	status: string
+	importance: string
+	createdAt: number
+	modifiedAt: number
+	deletedAt: string
+	deleted: boolean
+	teamId: string
+	description: string
+	user: User
+}
