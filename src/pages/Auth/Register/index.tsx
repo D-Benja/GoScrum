@@ -23,7 +23,7 @@ export const index = () => {
 	const navigate = useNavigate()
 
 	const [isSwitched, setIsSwitch] = useState(false)
-	const { data, isLoading } = useFetch(url)
+	const { data, isLoading } = useFetch({ url })
 
 	const optionData: OptionData = data
 	const initialValues = credentials

@@ -38,6 +38,7 @@ export const handleSubmit = (
 					formikHelpers.setSubmitting(false)
 
 					localStorage.setItem('token', data?.result?.token)
+					localStorage.setItem('user', data?.result?.user.userName)
 
 					navigate('/', { replace: true })
 				} else {

@@ -1,20 +1,30 @@
 import { comment, linkIcon } from '../../../assets/index'
+import useResize from '../../../hooks/useResize'
 import { capitalizeString } from '../../../utils/capitalizeString'
 import { Task } from '../models'
+import { handlePriorityColors } from '../utils'
 
 const TaskCard = ({ ...props }: Task) => {
 	const { title, description, createdAt, importance } = props
+	const screenSize = useResize()
+
+	const displayMobile = screenSize === 'sm' || screenSize === 'md'
 
 	const importanceCapitalized = capitalizeString(importance)
 	const createdAtParsed = new Date(createdAt).toLocaleString()
 
 	return (
-		<div className="h-48 rounded-2xl border px-4 py-3">
+		<div className="w-60 shrink-0 rounded-2xl border px-4 py-3 lg:h-48 lg:w-full">
 			<div className="flex items-center justify-between">
-				<span className="rounded-2xl bg-red-500/90 px-4 py-1 text-sm text-white">
+				<span
+					className={
+						'rounded-2xl px-4 py-1 text-sm text-white ' +
+						handlePriorityColors(importanceCapitalized)
+					}
+				>
 					{importanceCapitalized}
 				</span>
-				<span className="text-sm">{createdAtParsed}</span>
+				{!displayMobile && <span className="text-sm">{createdAtParsed}</span>}
 			</div>
 			<div className="mt-3 flex flex-col gap-2">
 				<h3>{title}</h3>
