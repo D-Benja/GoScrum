@@ -1,0 +1,6 @@
+- Unit test minimum the 90% of the components
+- Refact some logic of useEffect in the tasks components
+- Add, remove, update projects actions
+- Improve the ux by creating lock screens for non available features
+- agregar dispatch de una sola tarea
+- ciclo de vida de la tarea

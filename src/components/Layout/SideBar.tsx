@@ -3,8 +3,8 @@ import useDisplay from '../../hooks/useResize'
 
 import {
 	activityIcon,
-	analyticsIcon,
 	calendarIcon,
+	donateIcon,
 	homeIcon,
 	logo,
 	logoutIcon,
@@ -105,14 +105,14 @@ const SideBar = () => {
 									</NavLink>
 								</div>
 								<div className="w-full">
-									<NavLink to="/chat">
+									<NavLink to="/donate">
 										<div className="flex items-center gap-6">
 											<img
-												src={analyticsIcon}
+												src={donateIcon}
 												alt="message icon"
 												className="h-6 w-6"
 											/>
-											<span>Analytics</span>
+											<span>Donate</span>
 										</div>
 									</NavLink>
 								</div>

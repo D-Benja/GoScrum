@@ -12,8 +12,10 @@ import { index as Home } from './pages/Home/index'
 import { index as Projects } from './pages/Projects/index'
 import { index as Tasks } from './pages/Tasks/index'
 import { index as Schedule } from './pages/Schedule/index'
-import { CreateNewProject } from './pages/Projects/views/CreateNewProject'
 import { index as CreateNewTask } from './pages/Tasks/views/CreateNewTaks'
+import { index as Donate } from './pages/Donate/index'
+import { CreateNewProject } from './pages/Projects/views/CreateNewProject'
+import SingleTask from './pages/Tasks/views/SigleTask/SingleTask'
 
 const Error404 = lazy(() => import('./pages/Error404/index'))
 
@@ -42,6 +44,7 @@ const App = () => {
 								variants={pageTransition}
 							>
 								<Login />
+								{/* <MyForm message="Sign In" /> */}
 							</motion.div>
 						}
 					/>
@@ -109,6 +112,20 @@ const App = () => {
 								}
 							/>
 							<Route
+								path="/tasks/:id"
+								element={
+									<motion.div
+										className="h-full"
+										initial="out"
+										animate="in"
+										exit="exit"
+										variants={pageTransition}
+									>
+										<SingleTask />
+									</motion.div>
+								}
+							/>
+							<Route
 								path="/tasks/create"
 								element={
 									<motion.div
@@ -161,6 +178,20 @@ const App = () => {
 										variants={pageTransition}
 									>
 										<CreateNewProject />
+									</motion.div>
+								}
+							/>
+							<Route
+								path="/donate"
+								element={
+									<motion.div
+										className="h-full"
+										initial="out"
+										animate="in"
+										exit="exit"
+										variants={pageTransition}
+									>
+										<Donate />
 									</motion.div>
 								}
 							/>
