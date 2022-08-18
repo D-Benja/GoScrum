@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { comment, linkIcon } from '../../../assets/index'
 import useResize from '../../../hooks/useResize'
 import { capitalizeString } from '../../../utils/capitalizeString'
@@ -5,16 +6,24 @@ import { Task } from '../models'
 import { handlePriorityColors } from '../utils'
 
 const TaskCard = ({ ...props }: Task) => {
-	const { title, description, createdAt, importance } = props
+	const { title, description, createdAt, importance, _id } = props
 	const screenSize = useResize()
+	const navigate = useNavigate()
 
 	const displayMobile = screenSize === 'sm' || screenSize === 'md'
 
 	const importanceCapitalized = capitalizeString(importance)
 	const createdAtParsed = new Date(createdAt).toLocaleString()
 
+	const handleRedirect = () => {
+		navigate(`/tasks/${_id}`)
+	}
+
 	return (
-		<div className="w-60 shrink-0 rounded-2xl border px-4 py-3 lg:h-48 lg:w-full">
+		<div
+			className="w-60 shrink-0 cursor-pointer rounded-2xl border px-4 py-3 lg:h-48 lg:w-full"
+			onClick={handleRedirect}
+		>
 			<div className="flex items-center justify-between">
 				<span
 					className={

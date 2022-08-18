@@ -1,40 +1,39 @@
 import { useEffect, useState } from 'react'
 import { searchIcon } from '../../assets'
-import useFetch from '../../hooks/useFetch'
 import TaskCardSkeleton from './components/Skeletons/TaskCardSkeleton'
 import TaskColumn from './components/TaskColumn'
 import { debounce } from 'lodash'
 import { Task } from './models'
 import { renderTasks } from './components/renderTasks'
+import { getTasks } from '../../store/actions/tasksActions'
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 
 export const index = () => {
-	const [tasks, setTasks] = useState<Task[]>([])
+	const [data, setData] = useState<Task[]>([])
 	const [selected, setSelected] = useState('team_task')
 	const [searchTerm, setSearchTerm] = useState('')
 
-	const url = `https://goscrum-api.alkemy.org/task${
-		selected === 'user_task' ? '/me' : ''
-	}`
-	const authToken = localStorage.getItem('token')
+	const dispatch = useAppDispatch()
+	const { loading, tasks } = useAppSelector((state) => state.tasksReducer)
 
-	const { data, isLoading } = useFetch({
-		url,
-		authToken,
-	})
-
-	// reafact this
+	// reafact this useEffects
 	useEffect(() => {
-		if (data) {
-			setTasks(data)
-		}
-	}, [data])
+		const path = selected === 'user_task' ? '/task/me' : '/task'
 
-	// reafact this
+		dispatch(getTasks(path))
+	}, [selected])
+
+	useEffect(() => {
+		if (tasks?.length) {
+			setData(tasks)
+		}
+	}, [tasks])
+
 	useEffect(() => {
 		if (searchTerm) {
-			setTasks(data.filter((task: Task) => task.title.startsWith(searchTerm)))
+			setData(tasks.filter((task: Task) => task.title.startsWith(searchTerm)))
 		} else {
-			setTasks(data)
+			setData(tasks)
 		}
 	}, [searchTerm])
 
@@ -44,9 +43,9 @@ export const index = () => {
 
 	const handleSelectFilterTasks = (e: any) => {
 		if (e.target.value !== '') {
-			setTasks(data.filter((task: Task) => task.importance === e.target.value))
+			setData(tasks.filter((task: Task) => task.importance === e.target.value))
 		} else {
-			setTasks(data)
+			setData(tasks)
 		}
 	}
 
@@ -60,41 +59,46 @@ export const index = () => {
 				<h1 className="text-2xl font-semibold text-deep_blue">
 					Name of the assigned project
 				</h1>
-				<div className="flex items-center gap-6">
-					<h2 className="text-lg font-medium">Filter tasks:</h2>
+				<div className="flex items-center gap-14">
 					<div className="flex items-center gap-4">
-						<label>My tasks</label>
-						<input
-							name="filter"
-							type="radio"
-							value="user_task"
-							onChange={handleRadioFilterTasks}
-							checked={selected === 'user_task'}
-						/>
+						<h2 className="text-lg font-medium">Filter tasks:</h2>
+						<div className="flex items-center gap-2">
+							<label>My tasks</label>
+							<input
+								name="filter"
+								type="radio"
+								value="user_task"
+								onChange={handleRadioFilterTasks}
+								checked={selected === 'user_task'}
+								className="checked:bg-red-500"
+							/>
+						</div>
+						<div className="flex items-center gap-2">
+							<label>Team tasks</label>
+							<input
+								name="filter"
+								type="radio"
+								value="team_task"
+								onChange={handleRadioFilterTasks}
+								checked={selected === 'team_task'}
+							/>
+						</div>
 					</div>
 					<div className="flex items-center gap-4">
-						<label>Team tasks</label>
-						<input
-							name="filter"
-							type="radio"
-							value="team_task"
-							onChange={handleRadioFilterTasks}
-							checked={selected === 'team_task'}
-						/>
-					</div>
-					<h2 className="text-lg font-medium">Priority</h2>
-					<div>
-						<select
-							name="priority"
-							className="rounded-md border border-gray-400 px-2 py-1"
-							onChange={handleSelectFilterTasks}
-							defaultValue=""
-						>
-							<option value="">All</option>
-							<option value="LOW">Low</option>
-							<option value="MEDIUM">Medium</option>
-							<option value="HIGH">High</option>
-						</select>
+						<h2 className="text-lg font-medium">Priority</h2>
+						<div>
+							<select
+								name="priority"
+								className="rounded-md border border-gray-400 px-2 py-1"
+								onChange={handleSelectFilterTasks}
+								defaultValue=""
+							>
+								<option value="">All</option>
+								<option value="LOW">Low</option>
+								<option value="MEDIUM">Medium</option>
+								<option value="HIGH">High</option>
+							</select>
+						</div>
 					</div>
 					<div className="flex items-center justify-center gap-4">
 						<input
@@ -108,17 +112,17 @@ export const index = () => {
 				</div>
 			</div>
 			<div className="flex flex-col gap-8 lg:grid lg:min-h-full lg:grid-cols-4 lg:gap-x-10">
-				<TaskColumn>
-					{isLoading ? <TaskCardSkeleton /> : renderTasks(tasks, 'NEW')}
+				<TaskColumn name="To-Do">
+					{loading ? <TaskCardSkeleton /> : renderTasks(data, 'NEW')}
 				</TaskColumn>
-				<TaskColumn>
-					{isLoading ? <TaskCardSkeleton /> : renderTasks(tasks, 'IN PROGRESS')}
+				<TaskColumn name="In Progress">
+					{loading ? <TaskCardSkeleton /> : renderTasks(data, 'IN PROGRESS')}
 				</TaskColumn>
-				<TaskColumn>
-					{isLoading ? <TaskCardSkeleton /> : renderTasks(tasks, 'IN PROGRESS')}
+				<TaskColumn name="Under Review">
+					{loading ? <TaskCardSkeleton /> : renderTasks(data, 'IN PROGRESS')}
 				</TaskColumn>
-				<TaskColumn>
-					{isLoading ? <TaskCardSkeleton /> : renderTasks(tasks, 'FINISHED')}
+				<TaskColumn name="Finished">
+					{loading ? <TaskCardSkeleton /> : renderTasks(data, 'FINISHED')}
 				</TaskColumn>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ import { chartIcon, projectIcon, timeIcon } from '../../../assets'
 import useResize from '../../../hooks/useResize'
 import { useCircleProgressBar } from '../hooks/useCircleProgressBar'
 import CircleProgressBar from './ShowProgress/CircleProgressBar'
+import { TeamWorkCard } from './TeamsWorkCards/TeamWorkCard'
 
 const Main = () => {
 	const screenSize = useResize()
@@ -15,92 +16,7 @@ const Main = () => {
 		<div className="flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:grid-rows-2 lg:gap-y-10 lg:px-12 lg:pt-8">
 			<div className="mt-4 px-4 lg:col-span-7 lg:m-0 lg:flex lg:flex-col lg:gap-4">
 				<h1 className="mb-4 text-2xl font-bold">Teams Work</h1>
-				<div className="flex w-full flex-col gap-4 lg:flex lg:flex-row lg:gap-10">
-					<div className="rounded-2xl border bg-white py-4 px-6 shadow-md lg:w-64 lg:py-8">
-						<div className="flex items-center gap-4">
-							<div className="h-10 w-10 rounded-full border bg-blue-400" />
-							<h2>UX/UI Desing Team</h2>
-						</div>
-						{!displayMobile && (
-							<div className="mt-6 h-20">
-								<p className="mb-2">Team Members</p>
-								<div className="relative flex">
-									<div className="absolute top-0 left-0 h-10 w-10 rounded-full border bg-blue-100" />
-									<div className="absolute top-0 left-8 h-10 w-10 rounded-full border bg-blue-200" />
-									<div className="absolute top-0 left-16 h-10 w-10 rounded-full border bg-blue-300" />
-									<div className="absolute top-0 left-24 h-10 w-10 rounded-full border bg-blue-400" />
-									<div className="absolute top-0 left-32 h-10 w-10 rounded-full border bg-blue-500" />
-								</div>
-							</div>
-						)}
-
-						<div className="mt-6">
-							<div className="flex items-center justify-between text-sm">
-								<h3 className="mb-2 ">Progress</h3>
-								<p className="">75%</p>
-							</div>
-							<div className="relative h-1 w-full rounded-full bg-gray-200">
-								<div className="absolute top-0 left-0 h-1 w-3/4 rounded-full bg-blue-400" />
-							</div>
-						</div>
-					</div>
-					<div className="rounded-2xl border bg-white py-4 px-6 shadow-md lg:w-64 lg:py-8">
-						<div className="flex items-center gap-4">
-							<div className="h-10 w-10 rounded-full border bg-green-400" />
-							<h2>Front-end Team</h2>
-						</div>
-						{!displayMobile && (
-							<div className="mt-6 h-20">
-								<p className="mb-2">Team Members</p>
-								<div className="relative flex">
-									<div className="absolute top-0 left-0 h-10 w-10 rounded-full border bg-green-100" />
-									<div className="absolute top-0 left-8 h-10 w-10 rounded-full border bg-green-200" />
-									<div className="absolute top-0 left-16 h-10 w-10 rounded-full border bg-green-300" />
-									<div className="absolute top-0 left-24 h-10 w-10 rounded-full border bg-green-400" />
-									<div className="absolute top-0 left-32 h-10 w-10 rounded-full border bg-green-500" />
-								</div>
-							</div>
-						)}
-
-						<div className="mt-6">
-							<div className="flex items-center justify-between text-sm">
-								<h3 className="mb-2 ">Progress</h3>
-								<p className="">75%</p>
-							</div>
-							<div className="relative h-1 w-full rounded-full bg-gray-200">
-								<div className="absolute top-0 left-0 h-1 w-3/4 rounded-full bg-green-400" />
-							</div>
-						</div>
-					</div>
-					<div className="rounded-2xl border bg-white py-4 px-6 shadow-md lg:w-64 lg:py-8">
-						<div className="flex items-center gap-4">
-							<div className="h-10 w-10 rounded-full border bg-yellow-400" />
-							<h2>Back-end Team</h2>
-						</div>
-						{!displayMobile && (
-							<div className="mt-6 h-20">
-								<p className="mb-2">Team Members</p>
-								<div className="relative flex">
-									<div className="absolute top-0 left-0 h-10 w-10 rounded-full border bg-yellow-100" />
-									<div className="absolute top-0 left-8 h-10 w-10 rounded-full border bg-yellow-200" />
-									<div className="absolute top-0 left-16 h-10 w-10 rounded-full border bg-yellow-300" />
-									<div className="absolute top-0 left-24 h-10 w-10 rounded-full border bg-yellow-400" />
-									<div className="absolute top-0 left-32 h-10 w-10 rounded-full border bg-yellow-500" />
-								</div>
-							</div>
-						)}
-
-						<div className="mt-6">
-							<div className="flex items-center justify-between text-sm">
-								<h3 className="mb-2 ">Progress</h3>
-								<p className="">75%</p>
-							</div>
-							<div className="relative h-1 w-full rounded-full bg-gray-200">
-								<div className="absolute top-0 left-0 h-1 w-3/4 rounded-full bg-yellow-400" />
-							</div>
-						</div>
-					</div>
-				</div>
+				<TeamWorkCard />
 			</div>
 			<div className="px-4 lg:col-span-5 lg:col-start-8 lg:flex lg:flex-col lg:gap-4">
 				<h1 className="mb-4 text-2xl font-bold">Overall Progress</h1>
