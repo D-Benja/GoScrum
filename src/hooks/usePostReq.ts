@@ -10,14 +10,10 @@ interface fetchData {
 interface fetchProps {
 	url: string
 	authToken?: string | null
-	externalDependency?: any
+	body?: object
 }
 
-const useFetch = ({
-	url,
-	authToken,
-	externalDependency,
-}: fetchProps): fetchData => {
+const useFetch = ({ url, authToken, body }: fetchProps): fetchData => {
 	const [fetchedData, setFetchedData] = useState({
 		data: [],
 		isLoading: true,
@@ -36,11 +32,12 @@ const useFetch = ({
 			// 	signal: controller.signal,
 			// })
 
-			const response = await axios.get(url, {
+			const response = await axios.post(url, {
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${authToken}`,
 				},
+				body: JSON.stringify(body),
 			})
 
 			const data = await response.data
@@ -75,7 +72,7 @@ const useFetch = ({
 		// return () => {
 		// 	controller.abort()
 		// }
-	}, [url, fetchData, externalDependency])
+	}, [url, fetchData])
 
 	const { data, isLoading, error } = fetchedData
 
