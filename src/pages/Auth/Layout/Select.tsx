@@ -12,7 +12,9 @@ type Props = {
 const Select = ({ inputId, label, handler, options, defaultValue }: Props) => {
 	return (
 		<div className="flex flex-col">
-			<label className="text-sm">{label}</label>
+			<label htmlFor={inputId} className="text-sm">
+				{label}
+			</label>
 			<select
 				id={inputId}
 				className="rounded-lg border p-1 outline-none"
@@ -22,7 +24,7 @@ const Select = ({ inputId, label, handler, options, defaultValue }: Props) => {
 				<option value="selected" disabled>
 					{defaultValue}
 				</option>
-				{options.map((element: any, index: number) => (
+				{options?.map((element: any, index: number) => (
 					<option key={index} value={element}>
 						{element}
 					</option>

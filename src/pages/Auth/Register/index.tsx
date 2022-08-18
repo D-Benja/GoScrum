@@ -4,7 +4,7 @@ import { OptionData, User } from '../models'
 import { handleSubmit, validationSchema } from './utils'
 import { Link, useNavigate } from 'react-router-dom'
 import { handleURL } from '../../../utils/handleURL'
-import Input from '../Layout/Input'
+import Input from '../Layout/Input/Input'
 import Select from '../Layout/Select'
 import useFetch from '../../../hooks/useFetch'
 import { logo } from '../../../assets'
@@ -170,7 +170,7 @@ export const index = () => {
 						)}
 						<button
 							type="submit"
-							className="flex w-full justify-center rounded-lg border bg-orange-400/95 p-1 text-white"
+							className="flex w-full justify-center rounded-lg border bg-deep_orange p-1 text-white"
 						>
 							Sign In
 						</button>
