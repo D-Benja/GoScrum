@@ -1,4 +1,4 @@
-import { bellIcon, commentsIcon, profilePicture } from '../../assets'
+import { profilePicture } from '../../assets'
 
 const Header = () => {
 	const usename = localStorage.getItem('user')
@@ -13,8 +13,8 @@ const Header = () => {
 
 			<div className="flex items-center justify-center gap-14">
 				<div className="flex items-center justify-center gap-14">
-					<img src={commentsIcon} alt="" className="h-6 w-6 cursor-pointer" />
-					<img src={bellIcon} alt="" className="h-6 w-6 cursor-pointer" />
+					<i className="fi fi-rr-comments cursor-pointer text-2xl"></i>
+					<i className="fi fi-rr-bell cursor-pointer text-2xl"></i>
 				</div>
 				<div className="flex items-center justify-center gap-4">
 					<span className="text-lg font-medium">{usename}</span>

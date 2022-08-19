@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { searchIcon } from '../../assets'
 import TaskCardSkeleton from './components/Skeletons/TaskCardSkeleton'
 import TaskColumn from './components/TaskColumn'
 import { debounce } from 'lodash'
@@ -54,7 +53,7 @@ export const index = () => {
 	}, 700)
 
 	return (
-		<div className="flex flex-col gap-8 px-4 pt-6 lg:gap-16 lg:px-12 lg:pt-8">
+		<div className="flex flex-col gap-8 px-4 pt-6 lg:gap-14 lg:px-12 lg:pt-8">
 			<div className="flex items-center justify-between pr-8">
 				<h1 className="text-2xl font-semibold text-deep_blue">
 					Name of the assigned project
@@ -107,7 +106,7 @@ export const index = () => {
 							type="text"
 							onChange={handleSearch}
 						/>
-						<img src={searchIcon} alt="" className="h-6 w-6" />
+						<i className="fi fi-rr-search text-2xl"></i>
 					</div>
 				</div>
 			</div>

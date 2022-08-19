@@ -1,17 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import useDisplay from '../../hooks/useResize'
 
-import {
-	activityIcon,
-	calendarIcon,
-	donateIcon,
-	homeIcon,
-	logo,
-	logoutIcon,
-	messageIcon,
-	projectIcon,
-	taskIcon,
-} from '../../assets'
+import { logo } from '../../assets'
 
 const SideBar = () => {
 	const navigate = useNavigate()
@@ -43,7 +33,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/">
 										<div className="flex w-full items-center gap-6">
-											<img src={homeIcon} alt="home icon" className="h-6 w-6" />
+											<i className="fi fi-rr-home text-2xl" />
 											<span>Home</span>
 										</div>
 									</NavLink>
@@ -51,11 +41,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/projects">
 										<div className="flex items-center gap-6">
-											<img
-												src={projectIcon}
-												alt="task icon"
-												className="h-6 w-6"
-											/>
+											<i className="fi fi-rr-briefcase text-2xl"></i>
 											<span>Projects</span>
 										</div>
 									</NavLink>
@@ -63,7 +49,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/tasks">
 										<div className="flex items-center gap-6">
-											<img src={taskIcon} alt="task icon" className="h-6 w-6" />
+											<i className="fi fi-rr-apps text-2xl"></i>
 											<span>Tasks</span>
 										</div>
 									</NavLink>
@@ -71,11 +57,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/schedule">
 										<div className="flex items-center gap-6">
-											<img
-												src={calendarIcon}
-												alt="calendar icon"
-												className="h-6 w-6"
-											/>
+											<i className="fi fi-rr-calendar text-2xl"></i>
 											<span>Schedule</span>
 										</div>
 									</NavLink>
@@ -83,11 +65,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/chat">
 										<div className="flex items-center gap-6">
-											<img
-												src={messageIcon}
-												alt="message icon"
-												className="h-6 w-6"
-											/>
+											<i className="fi fi-rr-envelope text-2xl"></i>
 											<span>Messages</span>
 										</div>
 									</NavLink>
@@ -95,11 +73,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/chat">
 										<div className="flex items-center gap-6">
-											<img
-												src={activityIcon}
-												alt="activties icon"
-												className="h-6 w-6"
-											/>
+											<i className="fi fi-rr-exchange text-2xl"></i>
 											<span>Activities</span>
 										</div>
 									</NavLink>
@@ -107,11 +81,7 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/donate">
 										<div className="flex items-center gap-6">
-											<img
-												src={donateIcon}
-												alt="message icon"
-												className="h-6 w-6"
-											/>
+											<i className="fi fi-rr-donate text-2xl"></i>
 											<span>Donate</span>
 										</div>
 									</NavLink>
@@ -122,7 +92,7 @@ const SideBar = () => {
 									className="flex items-center gap-6"
 									onClick={handleLogout}
 								>
-									<img src={logoutIcon} alt="" className="h-6 w-6" />
+									<i className="fi fi-rr-sign-out-alt text-2xl"></i>
 									<span>Log out</span>
 								</button>
 							</div>

@@ -1,10 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom'
-import {
-	addWhiteIcon,
-	completedIcon,
-	inProgressIcon,
-	reviewIcon,
-} from '../../assets'
 
 export const index = () => {
 	const navigate = useNavigate()
@@ -21,7 +15,7 @@ export const index = () => {
 					className="flex items-center gap-6 rounded-2xl bg-deep_orange/75 p-3 px-8 font-medium text-white"
 					onClick={handleRedirect}
 				>
-					<img src={addWhiteIcon} alt="" className="h-6 w-6" />
+					<i className="fi fi-rr-plus text-2xl"></i>
 					<span>Create new Project</span>
 				</button>
 			</div>
@@ -30,7 +24,7 @@ export const index = () => {
 					<div className="mb-10 flex justify-between">
 						<div className="flex items-center gap-4">
 							<h2 className="text-lg font-medium">In Progress</h2>
-							<img src={inProgressIcon} alt="" className="h-6 w-6" />
+							<i className="fi fi-rr-bars-progress flex items-center text-2xl"></i>
 						</div>
 						<Link to="" className=" text-deep_orange">
 							See all
@@ -113,7 +107,7 @@ export const index = () => {
 					<div className="mb-10 flex justify-between">
 						<div className="flex items-center gap-4">
 							<h2 className="text-lg font-medium">Under Review</h2>
-							<img src={reviewIcon} alt="" className="h-6 w-6" />
+							<i className="fi fi-rr-search-alt text-2xl"></i>
 						</div>
 						<Link to="" className=" text-deep_orange">
 							See all
@@ -161,7 +155,7 @@ export const index = () => {
 					<div className="mb-10 flex justify-between">
 						<div className="flex items-center gap-4">
 							<h2 className="text-lg font-medium">Completed</h2>
-							<img src={completedIcon} alt="" className="h-6 w-6" />
+							<i className="fi fi-rr-checkbox text-2xl"></i>
 						</div>
 						<Link to="" className=" text-deep_orange">
 							See all

@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { comment, linkIcon } from '../../../assets/index'
 import useResize from '../../../hooks/useResize'
 import { capitalizeString } from '../../../utils/capitalizeString'
 import { Task } from '../models'
@@ -48,8 +47,8 @@ const TaskCard = ({ ...props }: Task) => {
 					<div className="absolute top-0 left-16 h-10 w-10 rounded-full border bg-blue-300" />
 				</div>
 				<div className="flex items-center gap-4 pt-2">
-					<img src={comment} alt="comment task icon" className="h-6 w-6" />
-					<img src={linkIcon} alt="link chain icon" className="h-6 w-6" />
+					<i className="fi fi-rr-comment-alt text-2xl"></i>
+					<i className="fi fi-rr-link text-2xl"></i>
 				</div>
 			</div>
 		</div>

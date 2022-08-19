@@ -1,17 +1,6 @@
 import { useReducer, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useNavigate, useParams } from 'react-router-dom'
-import {
-	arrowLeftIcon,
-	comment,
-	crossLighIcon,
-	linkIcon,
-	minusIcon,
-	pencilDarkIcon,
-	pencilIcon,
-	plusIcon,
-	trashIcon,
-} from '../../../../assets'
 import useFetch from '../../../../hooks/useFetch'
 import {
 	deleteTasks,
@@ -88,7 +77,7 @@ const SingleTask = () => {
 					<div className="flex items-center justify-between">
 						<div className="flex items-center gap-6">
 							<button onClick={handleGoBack}>
-								<img src={arrowLeftIcon} alt="" className="h-8 w-8" />
+								<i className="fi fi-rr-arrow-small-left flex items-center text-4xl"></i>
 							</button>
 							<h1 className="text-2xl font-bold">Task title: </h1>
 							{modifiable ? (
@@ -99,7 +88,7 @@ const SingleTask = () => {
 										defaultValue={data.title}
 										onChange={handleChange}
 									/>
-									<img src={pencilDarkIcon} alt="" className="h-6 w-6" />
+									<i className="fi fi-rr-pencil flex items-center text-2xl"></i>
 								</div>
 							) : (
 								<span className="text-2xl">{data.title}</span>
@@ -112,14 +101,14 @@ const SingleTask = () => {
 										className="flex w-56 items-center gap-6 rounded-2xl bg-deep_orange p-3 px-8 font-medium text-white"
 										onClick={handleSaveChanges}
 									>
-										<img src={pencilIcon} alt="" className="h-6 w-6" />
+										<i className="fi fi-rr-pencil flex items-center text-2xl"></i>
 										<span>Save changes</span>
 									</button>
 									<button
 										className="flex w-64 items-center gap-6 rounded-2xl bg-deep_orange p-3 px-8 font-medium text-white"
 										onClick={handleModify}
 									>
-										<img src={crossLighIcon} alt="" className="h-5 w-5" />
+										<i className="fi fi-rr-cross flex items-center text-2xl"></i>
 										<span>Discard changes</span>
 									</button>
 								</>
@@ -128,7 +117,7 @@ const SingleTask = () => {
 									className="flex w-56 items-center gap-6 rounded-2xl bg-deep_orange p-3 px-8 font-medium text-white"
 									onClick={handleModify}
 								>
-									<img src={pencilIcon} alt="" className="h-6 w-6" />
+									<i className="fi fi-rr-pencil flex items-center text-2xl"></i>
 									<span>Modify Task</span>
 								</button>
 							)}
@@ -137,7 +126,7 @@ const SingleTask = () => {
 								className="flex items-center gap-6 rounded-2xl bg-deep_orange p-3 px-8 font-medium text-white"
 								onClick={handleDeleteCard}
 							>
-								<img src={trashIcon} alt="" className="h-6 w-6" />
+								<i className="fi fi-rr-trash flex items-center text-2xl"></i>
 								<span>Delete Task</span>
 							</button>
 						</div>
@@ -162,7 +151,7 @@ const SingleTask = () => {
 												<option value="MEDIUM">Medium</option>
 												<option value="HIGH">High</option>
 											</select>
-											<img src={pencilDarkIcon} alt="" className="h-6 w-6" />
+											<i className="fi fi-rr-pencil text-2xl"></i>
 										</div>
 									) : (
 										<span
@@ -191,7 +180,7 @@ const SingleTask = () => {
 												<option value="IN PROGRESS">In Progress</option>
 												<option value="FINISHED">Finished</option>
 											</select>
-											<img src={pencilDarkIcon} alt="" className="h-6 w-6" />
+											<i className="fi fi-rr-pencil text-2xl"></i>
 										</div>
 									) : (
 										<span className="rounded-2xl bg-slate-600 px-4 py-1 text-sm font-medium tracking-wide text-white">
@@ -203,16 +192,8 @@ const SingleTask = () => {
 									<div className="mb-4 flex items-center justify-between">
 										<h3 className="text-lg">Assignees</h3>
 										<div className="flex gap-10">
-											<img
-												src={plusIcon}
-												alt=""
-												className="h-4 w-4 cursor-pointer"
-											/>
-											<img
-												src={minusIcon}
-												alt=""
-												className="h-4 w-4 cursor-pointer"
-											/>
+											<i className="fi fi-rr-plus cursor-pointer text-xl"></i>
+											<i className="fi fi-rr-minus cursor-pointer text-xl"></i>
 										</div>
 									</div>
 									<div className="flex flex-col gap-4">
@@ -275,9 +256,7 @@ const SingleTask = () => {
 							<div className="flex h-full flex-col gap-4 rounded-2xl border px-10 py-6">
 								<div className="flex items-center gap-4">
 									<h3 className="text-xl font-medium">Description</h3>
-									{modifiable && (
-										<img src={pencilDarkIcon} alt="" className="h-6 w-6" />
-									)}
+									{modifiable && <i className="fi fi-rr-pencil text-2xl"></i>}
 								</div>
 								<div className="h-full">
 									{modifiable ? (
@@ -300,10 +279,10 @@ const SingleTask = () => {
 										</div>
 										<div className="flex items-center gap-8">
 											<button>
-												<img src={comment} alt="" className="h-6 w-6" />
+												<i className="fi fi-rr-comment-alt text-2xl"></i>
 											</button>
 											<button>
-												<img src={linkIcon} alt="" className="h-6 w-6" />
+												<i className="fi fi-rr-link text-2xl"></i>
 											</button>
 										</div>
 									</div>

@@ -9,7 +9,7 @@ const TaskColumn = ({ children, name }: any) => {
 	}
 
 	return (
-		<div className="flex w-80 flex-col gap-4 lg:col-span-1 lg:flex lg:w-full lg:flex-col lg:gap-6">
+		<div className="flex w-full flex-col gap-4 lg:col-span-1 lg:flex lg:flex-col lg:gap-6">
 			<div className="flex items-center justify-between pr-5">
 				<h2 className="text-lg font-semibold">{name}</h2>
 				<button
@@ -19,7 +19,7 @@ const TaskColumn = ({ children, name }: any) => {
 					<img src={plusIcon} alt="" className="h-4 w-4" />
 				</button>
 			</div>
-			<div className="flex gap-6 overflow-x-scroll lg:flex lg:h-[670px] lg:flex-col lg:gap-6 lg:overflow-y-scroll lg:pr-2">
+			<div className="flex gap-6 overflow-x-scroll lg:flex lg:h-[650px] lg:flex-col lg:gap-6 lg:overflow-y-scroll lg:pr-2">
 				{children}
 			</div>
 		</div>
