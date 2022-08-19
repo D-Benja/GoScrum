@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { plusIcon } from '../../../assets'
 
 const TaskColumn = ({ children, name }: any) => {
 	const navigate = useNavigate()
@@ -16,7 +15,7 @@ const TaskColumn = ({ children, name }: any) => {
 					className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-deep_orange/70 bg-deep_orange/5"
 					onClick={() => handleNavigate('create')}
 				>
-					<img src={plusIcon} alt="" className="h-4 w-4" />
+					<i className="fi fi-rr-plus flex items-center text-xl"></i>
 				</button>
 			</div>
 			<div className="flex gap-6 overflow-x-scroll lg:flex lg:h-[650px] lg:flex-col lg:gap-6 lg:overflow-y-scroll lg:pr-2">

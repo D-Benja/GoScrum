@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { chartIcon, projectIcon, timeIcon } from '../../../assets'
 import useResize from '../../../hooks/useResize'
 import { useCircleProgressBar } from '../hooks/useCircleProgressBar'
 import CircleProgressBar from './ShowProgress/CircleProgressBar'
@@ -24,15 +23,15 @@ const Main = () => {
 					<div className="mt-2 ml-8 flex flex-1 flex-col justify-between">
 						<div className="flex flex-col gap-8">
 							<div className="flex items-center justify-start gap-10">
-								<img src={chartIcon} alt="" className="h-6 w-6" />
+								<i className="fi fi-rr-chart-histogram text-2xl"></i>
 								<span>14 Task In Progress</span>
 							</div>
 							<div className="flex items-center justify-start gap-10">
-								<img src={timeIcon} alt="" className="h-6 w-6" />
+								<i className="fi fi-rr-time-past text-2xl"></i>
 								<span>11 Task Upcoming</span>
 							</div>
 							<div className="flex items-center justify-start gap-10">
-								<img src={projectIcon} alt="" className="h-6 w-6" />
+								<i className="fi fi-rr-briefcase text-2xl"></i>
 								<span>3 Ongoing Projects</span>
 							</div>
 						</div>
