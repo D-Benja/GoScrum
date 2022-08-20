@@ -15,7 +15,7 @@ const TaskColumn = ({ children, name }: any) => {
 					className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-deep_orange/70 bg-deep_orange/5"
 					onClick={() => handleNavigate('create')}
 				>
-					<i className="fi fi-rr-plus flex items-center text-xl"></i>
+					<img src="icons/plus-icon-dark.svg" alt="" className="h-5 w-5" />
 				</button>
 			</div>
 			<div className="flex gap-6 overflow-x-scroll lg:flex lg:h-[650px] lg:flex-col lg:gap-6 lg:overflow-y-scroll lg:pr-2">

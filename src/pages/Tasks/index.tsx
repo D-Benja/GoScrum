@@ -106,7 +106,7 @@ export const index = () => {
 							type="text"
 							onChange={handleSearch}
 						/>
-						<i className="fi fi-rr-search text-2xl"></i>
+						<img src="/icons/search-icon.svg" alt="" className="h-6 w-6" />
 					</div>
 				</div>
 			</div>

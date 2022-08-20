@@ -31,7 +31,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/">
 										<div className="flex w-full items-center gap-6">
-											<i className="fi fi-rr-home text-2xl" />
+											<img
+												src="icons/house-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Home</span>
 										</div>
 									</NavLink>
@@ -39,7 +43,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/projects">
 										<div className="flex items-center gap-6">
-											<i className="fi fi-rr-briefcase text-2xl"></i>
+											<img
+												src="icons/briefcase-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Projects</span>
 										</div>
 									</NavLink>
@@ -47,7 +55,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/tasks">
 										<div className="flex items-center gap-6">
-											<i className="fi fi-rr-apps text-2xl"></i>
+											<img
+												src="icons/tasks-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Tasks</span>
 										</div>
 									</NavLink>
@@ -55,7 +67,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/schedule">
 										<div className="flex items-center gap-6">
-											<i className="fi fi-rr-calendar text-2xl"></i>
+											<img
+												src="icons/calendar-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Schedule</span>
 										</div>
 									</NavLink>
@@ -63,7 +79,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/chat">
 										<div className="flex items-center gap-6">
-											<i className="fi fi-rr-envelope text-2xl"></i>
+											<img
+												src="icons/comment-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Messages</span>
 										</div>
 									</NavLink>
@@ -71,7 +91,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/chat">
 										<div className="flex items-center gap-6">
-											<i className="fi fi-rr-exchange text-2xl"></i>
+											<img
+												src="icons/activities-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Activities</span>
 										</div>
 									</NavLink>
@@ -79,7 +103,11 @@ const SideBar = () => {
 								<div className="w-full">
 									<NavLink to="/donate">
 										<div className="flex items-center gap-6">
-											<i className="fi fi-rr-donate text-2xl"></i>
+											<img
+												src="icons/donate-icon.svg"
+												alt=""
+												className="h-6 w-6"
+											/>
 											<span>Donate</span>
 										</div>
 									</NavLink>
@@ -90,7 +118,7 @@ const SideBar = () => {
 									className="flex items-center gap-6"
 									onClick={handleLogout}
 								>
-									<i className="fi fi-rr-sign-out-alt text-2xl"></i>
+									<img src="icons/logout-icon.svg" alt="" className="h-6 w-6" />
 									<span>Log out</span>
 								</button>
 							</div>

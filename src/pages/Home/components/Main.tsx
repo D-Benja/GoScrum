@@ -24,15 +24,19 @@ const Main = () => {
 					<div className="mt-2 ml-8 flex flex-1 flex-col justify-between">
 						<div className="flex flex-col gap-8">
 							<div className="flex items-center justify-start gap-10">
-								<i className="fi fi-rr-chart-histogram text-2xl"></i>
+								<img src="icons/chart-icon.svg" alt="" className="h-6 w-6" />
 								<span>14 Task In Progress</span>
 							</div>
 							<div className="flex items-center justify-start gap-10">
-								<i className="fi fi-rr-time-past text-2xl"></i>
+								<img src="icons/clock-icon.svg" alt="" className="h-6 w-6" />
 								<span>11 Task Upcoming</span>
 							</div>
 							<div className="flex items-center justify-start gap-10">
-								<i className="fi fi-rr-briefcase text-2xl"></i>
+								<img
+									src="icons/briefcase-icon.svg"
+									alt=""
+									className="h-6 w-6"
+								/>
 								<span>3 Ongoing Projects</span>
 							</div>
 						</div>

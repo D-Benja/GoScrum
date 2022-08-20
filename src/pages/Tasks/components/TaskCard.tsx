@@ -20,7 +20,7 @@ const TaskCard = ({ ...props }: Task) => {
 
 	return (
 		<div
-			className="w-60 shrink-0 cursor-pointer rounded-2xl border px-4 py-3 shadow-md lg:h-48 lg:w-full"
+			className="group w-60 shrink-0 cursor-pointer rounded-2xl border px-4 py-3 shadow-md hover:bg-slate-200/20 lg:h-48 lg:w-full"
 			onClick={handleRedirect}
 		>
 			<div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ const TaskCard = ({ ...props }: Task) => {
 			</div>
 			<div className="mt-3 flex flex-col gap-2">
 				<h3>{title}</h3>
-				<p className="relative h-8 w-4/5 overflow-hidden text-xs after:absolute after:bottom-0 after:right-0 after:h-4 after:w-3/4 after:bg-gradient-to-r after:from-transparent after:to-white after:content-['']">
+				<p className="relative h-8 w-4/5 overflow-hidden text-xs after:absolute after:bottom-0 after:right-0 after:h-4 after:w-3/4 after:bg-gradient-to-r after:from-transparent after:to-white after:content-[''] after:group-hover:bg-gradient-to-r after:group-hover:from-transparent after:group-hover:to-inherit">
 					{description}
 				</p>
 			</div>
@@ -47,8 +47,8 @@ const TaskCard = ({ ...props }: Task) => {
 					<div className="absolute top-0 left-16 h-10 w-10 rounded-full border bg-blue-300" />
 				</div>
 				<div className="flex items-center gap-4 pt-2">
-					<i className="fi fi-rr-comment-alt text-2xl"></i>
-					<i className="fi fi-rr-link text-2xl"></i>
+					<img src="/icons/comment-alt-icon.svg" alt="" className="h-6 w-6" />
+					<img src="/icons/link-icon.svg" alt="" className="h-6 w-6" />
 				</div>
 			</div>
 		</div>

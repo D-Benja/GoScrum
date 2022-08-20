@@ -12,10 +12,10 @@ export const index = () => {
 			<div className="flex items-center justify-between">
 				<h1 className="text-2xl font-bold">Projects</h1>
 				<button
-					className="flex items-center gap-6 rounded-2xl bg-deep_orange/75 p-3 px-8 font-medium text-white"
+					className="flex items-center gap-6 rounded-2xl bg-deep_orange p-3 px-8 font-medium text-white"
 					onClick={handleRedirect}
 				>
-					<i className="fi fi-rr-plus text-2xl"></i>
+					<img src="icons/plus-icon-light.svg" alt="" className="h-6 w-6" />
 					<span>Create new Project</span>
 				</button>
 			</div>
@@ -24,7 +24,11 @@ export const index = () => {
 					<div className="mb-10 flex justify-between">
 						<div className="flex items-center gap-4">
 							<h2 className="text-lg font-medium">In Progress</h2>
-							<i className="fi fi-rr-bars-progress flex items-center text-2xl"></i>
+							<img
+								src="icons/bars-progress-icon.svg"
+								alt=""
+								className="h-6 w-6"
+							/>
 						</div>
 						<Link to="" className=" text-deep_orange">
 							See all
@@ -107,7 +111,7 @@ export const index = () => {
 					<div className="mb-10 flex justify-between">
 						<div className="flex items-center gap-4">
 							<h2 className="text-lg font-medium">Under Review</h2>
-							<i className="fi fi-rr-search-alt text-2xl"></i>
+							<img src="icons/review-icon.svg" alt="" className="h-6 w-6" />
 						</div>
 						<Link to="" className=" text-deep_orange">
 							See all
@@ -155,7 +159,7 @@ export const index = () => {
 					<div className="mb-10 flex justify-between">
 						<div className="flex items-center gap-4">
 							<h2 className="text-lg font-medium">Completed</h2>
-							<i className="fi fi-rr-checkbox text-2xl"></i>
+							<img src="icons/checkbox-icon.svg" alt="" className="h-6 w-6" />
 						</div>
 						<Link to="" className=" text-deep_orange">
 							See all

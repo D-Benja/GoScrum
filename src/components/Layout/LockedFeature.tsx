@@ -8,7 +8,7 @@ const LockedFeature = (props: any) => {
 				(rounded && `rounded-${rounded}`)
 			}
 		>
-			<i className="fi fi-rr-lock text-2xl"></i>
+			<img src="/icons/padlock-icon.svg" alt="" className="h-6 w-6" />
 			<h1>Feature Coming soon!</h1>
 		</div>
 	)

@@ -11,13 +11,18 @@ const Header = () => {
 
 			<div className="flex items-center justify-center gap-14">
 				<div className="flex items-center justify-center gap-14">
-					<i className="fi fi-rr-comments cursor-pointer text-2xl"></i>
-					<i className="fi fi-rr-bell cursor-pointer text-2xl"></i>
+					<img src="icons/messages-icon.svg" alt="" className="h-6 w-6" />
+					<img src="icons/bell-icon.svg" alt="" className="h-6 w-6" />
 				</div>
 				<div className="flex items-center justify-center gap-4">
 					<span className="text-lg font-medium">{usename}</span>
-					<div className="w-14 cursor-pointer">
-						<img src="/profile_picture.png" alt="" />
+					<div className="cursor-pointer">
+						<img
+							src="/profile_picture.png"
+							alt="profile picture"
+							width={54}
+							height={54}
+						/>
 					</div>
 				</div>
 			</div>
