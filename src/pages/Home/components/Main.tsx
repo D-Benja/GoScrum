@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LockedFeature from '../../../components/Layout/LockedFeature'
 import useResize from '../../../hooks/useResize'
 import { useCircleProgressBar } from '../hooks/useCircleProgressBar'
 import CircleProgressBar from './ShowProgress/CircleProgressBar'
@@ -70,6 +71,8 @@ const Main = () => {
 							</p>
 						)}
 					</div>
+					<div className="relative flex w-full rounded-2xl border bg-white p-4 shadow-md"></div>
+					<div className="flex w-full rounded-2xl border bg-white p-4 shadow-md"></div>
 					<div className="flex w-full rounded-2xl border bg-white p-4 shadow-md"></div>
 					<div className="flex w-full rounded-2xl border bg-white p-4 shadow-md"></div>
 					<div className="flex w-full rounded-2xl border bg-white p-4 shadow-md"></div>
@@ -97,7 +100,9 @@ const Main = () => {
 								</span>
 							</div>
 						</div>
-						<div className="flex w-full rounded-2xl border bg-white p-4 shadow-md"></div>
+						<div className="relative flex w-full rounded-2xl border bg-white p-4 shadow-md">
+							<LockedFeature rounded="2xl" />
+						</div>
 					</div>
 				</div>
 				<div className="lg:flex lg:flex-1 lg:flex-col lg:gap-4">

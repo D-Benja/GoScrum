@@ -7,7 +7,7 @@ export const TeamWorkCard = () => {
 
 	return (
 		<div className="flex w-full flex-col gap-4 lg:flex lg:flex-row lg:gap-10">
-			<div className="rounded-2xl border bg-white py-4 px-6 shadow-md lg:w-64 lg:py-8">
+			<div className=" rounded-2xl border bg-white py-4 px-6 shadow-md lg:w-64 lg:py-8">
 				<div className="flex items-center gap-4">
 					<div className="h-10 w-10 rounded-full border bg-blue-400" />
 					<h2>UX/UI Desing Team</h2>
