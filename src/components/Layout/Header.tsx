@@ -1,5 +1,3 @@
-import { profilePicture } from '../../assets'
-
 const Header = () => {
 	const usename = localStorage.getItem('user')
 
@@ -19,7 +17,7 @@ const Header = () => {
 				<div className="flex items-center justify-center gap-4">
 					<span className="text-lg font-medium">{usename}</span>
 					<div className="w-14 cursor-pointer">
-						<img src={profilePicture} alt="" />
+						<img src="/profile_picture.png" alt="" />
 					</div>
 				</div>
 			</div>

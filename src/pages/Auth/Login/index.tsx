@@ -4,7 +4,6 @@ import { useFormik } from 'formik'
 import Input from '../Layout/Input/Input'
 import { Link, useNavigate } from 'react-router-dom'
 import { handleSubmit, validationSchema } from './utils'
-import { logo } from '../../../assets'
 
 export const index = () => {
 	const [credentials] = useState<Credentials>({
@@ -23,7 +22,7 @@ export const index = () => {
 	return (
 		<>
 			<div className="absolute top-4 left-8 mt-2 flex items-center justify-center gap-4">
-				<img src={logo} alt="gs logo" className="h-16 w-10" />
+				<img src="/logo_gs.png" alt="gs logo" className="h-16 w-10" />
 				<div className="flex items-center justify-center text-2xl">
 					<span className="text-deep_orange">Go</span>
 					<span>Scrum</span>

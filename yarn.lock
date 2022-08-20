@@ -280,6 +280,29 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fullcalendar/common@~5.11.2":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.11.2.tgz#2b198a56d315b0f4d4197d730f9303a9ba8954f8"
+  integrity sha512-2YBRs4IFrZlo7UL7hEHK+QgnuQnVIfwSspCOy0Qe+DtU2hu3myPrxsW0Tt/8RaoWsRndRDw5jeJzpjcVHDSSGQ==
+  dependencies:
+    tslib "^2.1.0"
+
+"@fullcalendar/daygrid@^5.11.2":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.11.2.tgz#9e110d22e20a70c8dd8f32b11f2383d52da3d8a0"
+  integrity sha512-WmR8EAOR8Y9wyxlCK2gBW6lG/dPSN37eM8L7vgc7YgrQE1knL7ISgaUnDfFUNBFztmLakO/ZpeQQFpz3pnJwXg==
+  dependencies:
+    "@fullcalendar/common" "~5.11.2"
+    tslib "^2.1.0"
+
+"@fullcalendar/react@^5.11.2":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-5.11.2.tgz#019e6a0573d869c2a52f63426e13593857ee2d30"
+  integrity sha512-OnLvfV406VEQcK4QGN8xR4ro6Manp9dKE7/n9dhs19J1kKpqS1w1sIEYg1dT11njbk0Ob+TdF3cXLDFq73jUlA==
+  dependencies:
+    "@fullcalendar/common" "~5.11.2"
+    tslib "^2.1.0"
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
@@ -599,6 +622,13 @@
   integrity sha512-8BSvG1kGm83cyJITQMZSulnl6QV8jqAGreJsc5tPu1Jq0vTSOiY/k24Wx82JRpWwZSqrala6sd5rWi6aNXvqcw==
   dependencies:
     "@types/node" "*"
+
+"@types/fullcalendar@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@types/fullcalendar/-/fullcalendar-3.8.0.tgz#9d523b78d1f96efea27a81578763eadabfabdf0d"
+  integrity sha512-uxYNAnvH7s3asQjkH8p0K1V4ENMLQDGNmFHWA7/iRZwU13A7RCOvnNoRapEIIRx8hI/+wHWkd4Q9KmpVCQfIEg==
+  dependencies:
+    fullcalendar "*"
 
 "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
@@ -2134,6 +2164,11 @@ fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
+fullcalendar@*:
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-5.11.2.tgz#efdafbb40652f7dec8aa4443a75f5c0f397288c3"
+  integrity sha512-gAJTY+4rnWZV2BVrul6Rvl52sidxOyAhN0P8Fp9iYP0mJhTC+2U0oOoN8VKEnyi88QVe0WkFVt6p/pd5XLqBPw==
 
 function-bind@^1.1.1:
   version "1.1.1"

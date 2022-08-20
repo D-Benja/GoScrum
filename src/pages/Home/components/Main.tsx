@@ -39,9 +39,9 @@ const Main = () => {
 						{!displayMobile && (
 							<Link
 								to="/analytics"
-								className="text-sm tracking-wide text-deep_orange"
+								className="font-medium tracking-wide text-deep_orange"
 							>
-								View analytics
+								View analytics →
 							</Link>
 						)}
 					</div>
@@ -57,7 +57,7 @@ const Main = () => {
 				<div className="grid h-full grid-cols-2 grid-rows-2 gap-5 lg:grid-cols-3">
 					<div className="flex w-full flex-col rounded-2xl border bg-white py-3 px-2 shadow-md lg:p-4">
 						<div className="flex flex-col lg:mb-1 lg:flex lg:w-full lg:flex-row lg:items-center lg:justify-between">
-							<h3 className="text-sm lg:font-medium">Some Task Title</h3>
+							<h2 className="text-sm lg:font-medium">Some Task Title</h2>
 							<p className="mb-2 text-xs lg:text-sm">2022-09-12</p>
 						</div>
 						<span className="mb-2 text-xs lg:mb-4">
@@ -85,7 +85,7 @@ const Main = () => {
 						<div className="flex w-full flex-col justify-between rounded-2xl border bg-white p-4 shadow-md">
 							<div>
 								<div className="flex w-full justify-between text-sm">
-									<h3 className="font-medium">Some Task Title</h3>
+									<h2 className="font-medium">Some Task Title</h2>
 									<p>2022-16-10</p>
 								</div>
 								<span className="mb-2 text-xs">
@@ -95,7 +95,7 @@ const Main = () => {
 
 							<div className="flex max-w-fit gap-4 text-sm">
 								<span>Priority: </span>
-								<span className="rounded-xl bg-red-400 px-2 py-[1px] tracking-wide text-white">
+								<span className="rounded-xl bg-red-500 px-2 py-[1px] tracking-wide text-white">
 									High
 								</span>
 							</div>
@@ -110,7 +110,7 @@ const Main = () => {
 					<div className="flex h-64 flex-col gap-4 overflow-y-scroll lg:h-72">
 						<div className="flex w-full shrink-0 flex-col justify-between rounded-2xl border bg-white p-4 shadow-md">
 							<div className="flex w-full justify-between text-sm">
-								<h3 className="font-medium">Jhon Doe</h3>
+								<h2 className="font-medium">Jhon Doe</h2>
 								<p className="text-sm">5min ago</p>
 							</div>
 							<p className="text-sm">Completed some important task</p>

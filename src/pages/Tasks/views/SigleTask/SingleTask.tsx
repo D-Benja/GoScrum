@@ -1,6 +1,7 @@
 import { useReducer, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useNavigate, useParams } from 'react-router-dom'
+import LockedFeature from '../../../../components/Layout/LockedFeature'
 import useFetch from '../../../../hooks/useFetch'
 import {
 	deleteTasks,
@@ -132,7 +133,7 @@ const SingleTask = () => {
 						</div>
 					</div>
 					<div className="mb-20 grid h-full grid-cols-12 gap-x-10">
-						<div className="col-span-4 flex flex-col gap-10 rounded-2xl border px-10 py-6">
+						<div className="col-span-4 flex flex-col gap-10 rounded-2xl border px-10 py-6 shadow-md">
 							<h2 className="text-xl font-medium">Task Information</h2>
 							<div className="flex flex-col gap-8">
 								<div className="flex items-center gap-4">
@@ -196,7 +197,9 @@ const SingleTask = () => {
 											<i className="fi fi-rr-minus cursor-pointer text-xl"></i>
 										</div>
 									</div>
-									<div className="flex flex-col gap-4">
+									<div className="relative flex flex-col gap-4">
+										<LockedFeature rounded="2xl" />
+
 										<div className="flex items-center gap-6 rounded-xl border py-2 px-4">
 											<div className="h-10 w-10 rounded-full bg-slate-600" />
 											<span>{data.user?.userName}</span>
@@ -211,18 +214,26 @@ const SingleTask = () => {
 										</div>
 									</div>
 								</div>
-								<div className="flex flex-col gap-4">
+								<div className="flex w-full flex-col gap-4">
 									<h3 className="text-lg">Project Linked</h3>
-									<select name="" id="" className="rounded-xl border px-4 py-2">
-										<option value="">Project 1</option>
-										<option value="">Project 2</option>
-										<option value="">Project 3</option>
-									</select>
+									<div className="relative">
+										<LockedFeature rounded="xl" />
+
+										<select
+											name=""
+											id=""
+											className="w-full rounded-xl border px-4 py-2"
+										>
+											<option value="">Project 1</option>
+											<option value="">Project 2</option>
+											<option value="">Project 3</option>
+										</select>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div className="col-span-8 flex flex-col gap-10">
-							<div className="flex h-36 w-full items-center gap-20 rounded-2xl border px-16">
+							<div className="flex h-36 w-full items-center gap-20 rounded-2xl border px-16 shadow-md">
 								<div className="flex h-full flex-col justify-center gap-2">
 									<div className="flex items-center gap-2">
 										<div className="h-2 w-2 rounded-full bg-deep_orange " />
@@ -253,7 +264,7 @@ const SingleTask = () => {
 									<span>{parseDate(data.createdAt)}</span>
 								</div>
 							</div>
-							<div className="flex h-full flex-col gap-4 rounded-2xl border px-10 py-6">
+							<div className="flex h-full flex-col gap-4 rounded-2xl border px-10 py-6 shadow-md">
 								<div className="flex items-center gap-4">
 									<h3 className="text-xl font-medium">Description</h3>
 									{modifiable && <i className="fi fi-rr-pencil text-2xl"></i>}

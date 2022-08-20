@@ -7,7 +7,6 @@ import { handleURL } from '../../../utils/handleURL'
 import Input from '../Layout/Input/Input'
 import Select from '../Layout/Select'
 import useFetch from '../../../hooks/useFetch'
-import { logo } from '../../../assets'
 
 export const index = () => {
 	const [credentials] = useState<User>({
@@ -45,7 +44,7 @@ export const index = () => {
 			) : (
 				<div className="container mx-auto flex h-[100vh] flex-col items-center justify-center ">
 					<div className="absolute top-4 left-8 mt-2 flex items-center justify-center gap-4">
-						<img src={logo} alt="gs logo" className="h-16 w-10" />
+						<img src="/logo_gs.png" alt="gs logo" className="h-16 w-10" />
 						<div className="flex items-center justify-center text-2xl">
 							<span className="text-deep_orange">Go</span>
 							<span>Scrum</span>

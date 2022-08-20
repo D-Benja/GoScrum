@@ -20,7 +20,7 @@ const TaskCard = ({ ...props }: Task) => {
 
 	return (
 		<div
-			className="w-60 shrink-0 cursor-pointer rounded-2xl border px-4 py-3 lg:h-48 lg:w-full"
+			className="w-60 shrink-0 cursor-pointer rounded-2xl border px-4 py-3 shadow-md lg:h-48 lg:w-full"
 			onClick={handleRedirect}
 		>
 			<div className="flex items-center justify-between">

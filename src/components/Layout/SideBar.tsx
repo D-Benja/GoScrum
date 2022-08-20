@@ -1,8 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import useDisplay from '../../hooks/useResize'
 
-import { logo } from '../../assets'
-
 const SideBar = () => {
 	const navigate = useNavigate()
 	const screenSize = useDisplay()
@@ -23,7 +21,7 @@ const SideBar = () => {
 					<div className="flex h-screen w-72 flex-col items-center p-6">
 						<div className="flex h-full flex-col items-center justify-between">
 							<div className="mt-2 flex w-full items-center justify-center gap-4">
-								<img src={logo} alt="gs logo" className="h-16 w-10" />
+								<img src="/logo_gs.png" alt="gs logo" className="h-16 w-10" />
 								<div className="flex items-center justify-center text-2xl">
 									<span className="text-deep_orange">Go</span>
 									<span>Scrum</span>

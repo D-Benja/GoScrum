@@ -29,7 +29,7 @@ const CircleProgressBar = (props: any) => {
 					r={radius}
 					fill="none"
 					strokeWidth={strokeWidth}
-					className="stroke-deep_orange/80"
+					className="stroke-deep_orange"
 					variants={circleProgressBarAnimation}
 				/>
 			</motion.svg>
