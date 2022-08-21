@@ -81,8 +81,6 @@ export const updateTasks = (data: any) => (dispatch: any) => {
 	const url = handleURL(`/task/${data.id}`)
 	const authToken = localStorage.getItem('token')
 
-	console.log(data)
-
 	fetch(url, {
 		method: 'PATCH',
 		headers: {

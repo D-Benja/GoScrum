@@ -1,4 +1,3 @@
-// import { AnyAction } from 'redux'
 import { TASKS_REQUEST, TASKS_SUCCESS, TASKS_FAILURE } from '../types'
 
 const initialState = {
